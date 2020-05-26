@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counting Machine</title>
+<style>
+    body{
+        background: url(Picnic.jfif);
+        background-size: cover;
+        text-align: center;
+    }
+
+    button{
+       font-size: 40px;
+       padding: 10px;
+       color: teal;
+       background-color: black;
+   }
+</style>
+
+</head>
+<body>
+    <button id="Button">Start Counting</button>
+    <script>
+        var counter = 0
+
+
+    var Button = document.querySelector("#Button")
+    Button.onclick = addTextToPage
+
+
+    function addTextToPage(){
+        counter += 1
+            var newElement = document.createElement("h1")
+            var insertNumber = document.createTextNode(counter)
+            newElement.appendChild(insertNumber)
+            document.body.appendChild(newElement)
+
+            if(counter > 99){
+                window.clearInterval(stop)
+            }
+        }
+
+        var stop = window.setInterval(counting, 500)
+    </script>
+</body>
+</html>
